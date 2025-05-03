@@ -30,9 +30,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background-color: #120f0a;
-  box-shadow: 0 0 5px 1px rgb(255, 246, 238), 0 0 10px 3px rgb(240, 208, 178),
-    0 0 16px 8px rgb(232, 155, 84), 0 0 40px 15px rgb(232, 116, 7);
+  background-color: #262420;
   z-index: 0;
 }
 
@@ -76,7 +74,7 @@ fieldset {
   outline: none;
   width: 80%;
   height: 80%;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,12 +91,12 @@ legend {
 
 h1 {
   color: white;
-  font-size: clamp(1.5rem, 1.3056rem + 0.8889vw, 1.75rem);
+  font-size: clamp(1rem, 0.75rem + 2.5vw, 2rem);
 }
 
 .titling > p {
-  color: rgb(255, 221, 124, 0.8);
-  font-size: clamp(0.625rem, 0.5278rem + 0.4444vw, 0.75rem);
+  color: #aaaaaa;
+  font-size: clamp(0.625rem, 0.4583rem + 0.8333vw, 0.875rem);
 }
 
 .control-wrapper {
@@ -107,12 +105,12 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
 }
 
 .form-control-wrapper {
   display: flex;
-  gap: 2em;
+  gap: 1em;
   width: 100%;
 }
 
@@ -123,7 +121,7 @@ h1 {
 label {
   display: block;
   font-size: clamp(0.75rem, 0.6528rem + 0.4444vw, 0.875rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   margin-bottom: 0.5em;
 }
 
@@ -132,8 +130,29 @@ input {
   display: block;
   width: 100%;
   border: none;
-  padding: 0.5em;
+  padding: 0.25em;
   border-radius: 2em;
+  font-size: clamp(0.625rem, 0.4583rem + 0.8333vw, 0.875rem);
+}
+
+input:not(:placeholder-shown):focus {
+  outline: 2px solid gold;
+  border: 2px solid gold;
+  outline-offset: 2px;
+}
+
+input:not(:placeholder-shown):user-valid:not(:focus) {
+  background-color: rgb(130, 181, 130);
+  border: 2px solid green;
+}
+
+input:not(:placeholder-shown):user-invalid:not(:focus) {
+  background-color: rgb(249, 122, 122);
+  border: 2px solid red;
+}
+
+input:placeholder-shown:focus {
+  outline: none;
 }
 
 .form-control + .form-control > label {
@@ -153,4 +172,41 @@ button {
   background-color: rgb(255, 221, 124, 1);
   border-radius: 2em;
   padding: 0.25em 2em;
+  cursor: pointer;
+  font-size: clamp(0.75rem, 0.6528rem + 0.4444vw, 0.875rem);
+}
+
+.sign-in {
+  font-size: clamp(0.625rem, 0.4583rem + 0.8333vw, 0.875rem);
+  text-align: center;
+  color: rgb(255, 221, 124, 1);
+  padding-top: 1em;
+}
+
+.sign-in > a {
+  color: #5f9b8e;
+  padding-left: 0.25em;
+}
+
+@media (width > 450px) {
+  .control-wrapper,
+  .form-control-wrapper {
+    gap: 2em;
+  }
+}
+
+@media (width >= 500px) {
+  input {
+    padding: 0.5em;
+  }
+
+  button {
+    padding: 0.75em 6em;
+  }
+}
+
+@media (width >= 700px) {
+  input {
+    padding: 1em;
+  }
 }
