@@ -33,6 +33,7 @@ body {
   background-color: #120f0a;
   box-shadow: 0 0 5px 1px rgb(255, 246, 238), 0 0 10px 3px rgb(240, 208, 178),
     0 0 16px 8px rgb(232, 155, 84), 0 0 40px 15px rgb(232, 116, 7);
+  z-index: 0;
 }
 
 img,
@@ -56,4 +57,100 @@ svg {
 
 .svg-wrapper {
   right: 10px;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+fieldset {
+  border: none;
+  outline: none;
+  width: 80%;
+  height: 80%;
+  outline: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+legend {
+  color: transparent;
+  height: 0px;
+}
+
+.titling {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(1.5rem, 1.3056rem + 0.8889vw, 1.75rem);
+}
+
+.titling > p {
+  color: rgb(255, 221, 124, 0.8);
+  font-size: clamp(0.625rem, 0.5278rem + 0.4444vw, 0.75rem);
+}
+
+.control-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.form-control-wrapper {
+  display: flex;
+  gap: 2em;
+  width: 100%;
+}
+
+.form-control {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-size: clamp(0.75rem, 0.6528rem + 0.4444vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5em;
+}
+
+input {
+  appearance: none;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0.5em;
+  border-radius: 2em;
+}
+
+.form-control + .form-control > label {
+  text-align: right;
+}
+
+.form-control + .form-control > input {
+  margin-left: auto;
+}
+
+button {
+  all: unset;
+  appearance: none;
+  margin: 0 auto;
+  display: block;
+  color: black;
+  background-color: rgb(255, 221, 124, 1);
+  border-radius: 2em;
+  padding: 0.25em 2em;
 }
